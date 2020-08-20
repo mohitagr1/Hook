@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main1.css">
+
+    <title>HooK</title>
+  </head>
+  <body>
+
+    <div id="other">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">HooK</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#room">Room <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav justify-content-end">
+              <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="container header">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h2 class="heading">Enjoy high quality video calling.</h2>
+                <h2 class="heading">Now for Free.</h2>
+                <p class="lead pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur vero, magni, dolores ad dolorem culpa perspiciatis accusantium unde maiores tempore amet corporis corrupti praesentium! Sit odit tenetur quos animi?</p>
+                <div class="mt-5">
+                    <a  class="btn btn-info btn-lg create-room text-white" id="createRoomButton"><svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+                      <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+                    </svg> Create Room</a>
+                    <span class="pl-3 pl-lg-1 pl-xl-3 lead">or</span>
+                    <span class="align-middle">
+                        <input id="roomID" class="ml-3 ml-lg-1 ml-xl-3 or" type="text" placeholder="   Enter Room ID">
+                    </span>
+                    <span>
+                        <a  class="btn btn-info btn-sm ml-3 join text-white" id="joinRoomButton">Join</a>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-12 image mt-5 mt-lg-0">
+                <div >
+                    <img class="img-fluid"src="img/image.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <section class="section scrollspy" id="room" style="display: none;">
+      <div id="crbtext" class="container white">
+      </div>
+      <div class="videoFrames scrollspy" id="videos">
+          <div class="card vFrame1 grey darken-3" id="local-video-div">
+              <video width=100% height=100% autoplay muted class="local-video col s6 center" id="local-video"></video>
+              <div class="callEnd" id="vFrameOptions">
+                  <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                          class="center material-icons">fullscreen</i></a>
+                  <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                          class="material-icons">mic</i></a>
+                  <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                          class="material-icons">videocam</i></a>
+                  <a class="btn-floating btn waves-effect waves-light red" id="endCallButton"><i
+                          class="material-icons">call_end</i></a>
+              </div>
+          </div>
+          <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+              <video autoplay muted class="center" id="remote-video"></video>
+          </div> -->
+          <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+              <video autoplay muted class="center" id="remote-video"></video>
+          </div> -->
+          <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+              <video autoplay muted class="center" id="local-video"></video>
+          </div> -->
+          <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+              <video autoplay muted class="center" id="local-video"></video>
+          </div> -->
+
+      </div>
+  </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <!-- <script src="bundle.js"></script> -->
+    <script src="landingBundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script>
+      var create = document.getElementById("createRoomButton");
+      var join = document.getElementById("joinRoomButton");
+      var room = document.getElementById('room');
+      var other = document.getElementById('other');
+      var endCall = document.getElementById('endCallButton');
+      create.addEventListener('click', function(){
+        room.style.display="block";
+        other.style.display="none";
+        body.style.background="none";
+      })
+      join.addEventListener('click', function(){
+        room.style.display="block";
+        other.style.display="none";
+      })
+      endCall.addEventListener('click', ()=>{
+        room.style.display="none";
+        other.style.display="block";
+      })
+    </script> -->
+  </body>
+</html>

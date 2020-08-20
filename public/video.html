@@ -1,0 +1,57 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <section class="section scrollspy" id="room">
+        <div id="crbtext" class="container white">
+        </div>
+        <div class="videoFrames scrollspy" id="videos">
+            <div onclick="myFunction()" class="card vFrame1 grey darken-3" id="local-video-div">
+                <video width=100% height=100% autoplay muted class="local-video col s6 center" id="local-video"></video>
+                <div class="callEnd" id="vFrameOptions">
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="center material-icons">fullscreen</i></a>
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="material-icons">mic</i></a>
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="material-icons">videocam</i></a>
+                    <a class="btn-floating btn waves-effect waves-light red" id="endCallButton"><i
+                            class="material-icons">call_end</i></a>
+                </div>
+            </div>
+            <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="remote-video"></video>
+            </div> -->
+            <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="remote-video"></video>
+            </div> -->
+            <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="local-video"></video>
+            </div> -->
+            <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="local-video"></video>
+            </div> -->
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+header {
+
+    background-color: black;
+    background-position: center;
+    min-height: 800px;
+}
+
+#local-video{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /*Safari and Chrome*/
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+#headcontent {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#missing {
+    grid-area: 1/1;
+}
+
+#findingroom {
+    vertical-align: middle;
+    grid-area: 3/1/span 1/span 1;
+}
+
+#createRoomButton {
+    border-radius: 30px;
+}
+
+#vframeR {
+    position: relative;
+    width: 100%;
+    height: 315px;
+}
+
+#local-video-div{
+    width: 100%;
+    height: 315px;
+}
+
+#vFrameOptions {
+    flex-direction: column;
+    display: flex;
+    min-height: 100%;
+    /* min-width: 100%; */
+    /* background-color: orange; */
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    /* padding: 0 50 0 50; */
+    /* margin: 20px; */
+}
+
+/* .callEnd{
+    position: absolute;
+} */
+
+.card {
+    margin-bottom: 0px;
+}
+
+/* #remote-video{
+    width: 100%;
+    height: 100%;
+} */
+
+#vframeR:nth-child(2) {
+    grid-area: 1 / 2 / span 1 / span 1;
+}
+
+#vframeR:nth-child(3) {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+
+#vframeR:nth-child(4) {
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+
+.videoFrames {
+    /* background-color: #172328; */
+    /* max-height: 1000px;*/
+    min-height: 600px;
+    /* position: relative; */
+    display: grid;
+    /* grid-template-rows: repeat(2,1fr); */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 5px;
+    /* justify-items: center; */
+    /* grid-template-areas:
+        "vFrame1 vFrame2"
+        "vFrame3 vFrame4"; */
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 0.5fr);
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; */
+}
+
+#room {
+    background-color: #172328;
+}
+
+/* section{
+background-color: #172328;
+} */
+@media screen and (max-width: 670px) {
+    header {
+        min-height: 600px;
+    }
+
+    #headcontent {
+        display: grid;
+        grid-template-rows: 1fr 0.1fr 1fr;
+    }
+
+    #findingroom {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+/* .section {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+} */
+
+.tabs .indicator {
+    background-color: #1a237e;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background: transparent;
+}
+
+

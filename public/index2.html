@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Hook</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">HooK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#room">Room <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+
+
+    <!-- navbar -->
+    <header>
+        <div class="container row" id="headcontent">
+            <div class="" id="missing">
+                <h2 class="grey-text text-lighten-3 left" id="heading">Missing Your Friends?</h2>
+            </div>
+            <div class="bottom" id="findingroom">
+                <div class="input-field col s12 l6">
+                    <input id="roomID" type="text" class="validate white-text">
+                    <label for="roomID">Room ID</label>
+                    <a href="#video" class=" right btn" id="joinRoomButton">Join Room</a>
+                </div>
+                <div class="col s12 l2">
+                    <h5 class="grey-text text-lighten-3 center">or</h5>
+                </div>
+                <div class="col s12 l4 center" id="crb">
+                    <a href="#video" class="waves-effect waves-light btn-large" id="createRoomButton"><i
+                            class="material-icons right">house</i>Create
+                        room</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- video room -->
+    <section class="section scrollspy" id="room">
+        <div id="crbtext" class="container white">
+        </div>
+        <div class="videoFrames scrollspy" id="videos">
+            <div onclick="myFunction()" class="card vFrame1 grey darken-3" id="local-video-div">
+                <video width=100% height=100% autoplay muted class="local-video col s6 center" id="local-video"></video>
+                <div class="callEnd" id="vFrameOptions">
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="center material-icons">fullscreen</i></a>
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="material-icons">mic</i></a>
+                    <a class="btn-floating btn waves-effect waves-light" id="end-call"><i
+                            class="material-icons">videocam</i></a>
+                    <a class="btn-floating btn waves-effect waves-light red" id="endCallButton"><i
+                            class="material-icons">call_end</i></a>
+                </div>
+            </div>
+            <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="remote-video"></video>
+            </div> -->
+            <!-- <div class="card vFrame2 grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="remote-video"></video>
+            </div> -->
+            <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="local-video"></video>
+            </div> -->
+            <!-- <div class="card vFrameRemote grey darken-3" id="vframeR">
+                <video autoplay muted class="center" id="local-video"></video>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- services / tabs -->
+    <div class="grey lighten-1">
+        <section class="section container scrollspy" id="services">
+            <div class="row">
+                <div class="col s12 l5">
+                    <h2 class="indigo-text text-darken-4">What We do..</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit
+                        elit
+                        nec, tincidunt orci.</p>
+                    <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida
+                        urna,
+                        vitae scelerisque erat ornare nec.</p>
+                </div>
+                <div class="col s12 l5 offset-l2">
+                    <!-- tabs -->
+                    <ul class="tabs">
+                        <li class="tab col s6">
+                            <a href="#frontEnd" class="active indigo-text text-darken-4">FrontEnd</a>
+                        </li>
+                        <li class="tab col s6">
+                            <a href="#backEnd" class="indigo-text text-darken-4">BackEnd</a>
+                        </li>
+                    </ul>
+                    <div id="frontEnd" class="col s12">
+                        <p class="flow-text indigo-text text-darken-4">FrontEnd</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit
+                            elit nec, tincidunt orci.</p>
+                        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida
+                            urna, vitae scelerisque erat ornare nec.</p>
+                    </div>
+                    <div id="backEnd" class="col s12">
+                        <p class="flow-text indigo-text text-darken-4">BackEnd</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit
+                            elit nec, tincidunt orci.</p>
+                        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida
+                            urna, vitae scelerisque erat ornare nec.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+
+    <!-- contact form -->
+    <section class="section container scrollspy" id="contact">
+        <div class="row">
+            <div class="col s12 l5">
+                <h2 class="indigo-text text-darken-4">Get in Touch</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit
+                    nec, tincidunt orci.</p>
+                <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna,
+                    vitae scelerisque erat ornare nec.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit
+                    nec, tincidunt orci.</p>
+            </div>
+            <div class="col s12 l5 offset-l2">
+                <form>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" id="email">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">message</i>
+                        <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" id="date" class="datepicker">
+                        <label for="date">Choose a date you need me for...</label>
+                    </div>
+                    <div class="input-field center">
+                        <button class="btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit
+                        elit nec, tincidunt orci.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul class="row">
+                        <li><i class="fab fa-facebook"></i><a class="grey-text text-lighten-3" href="#"> Facebook</a>
+                        </li>
+                        <li><i class="fab fa-twitter"></i><a class="grey-text text-lighten-3" href="#"> Twitter</a></li>
+                        <li><i class="fab fa-linkedin"></i><a class="grey-text text-lighten-3" href="#"> Linked In</a>
+                        </li>
+                        <li><i class="fab fa-instagram"></i><a class="grey-text text-lighten-3" href="#"> Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container center-align">&copy; 2020 Mohit Agarwal</div>
+        </div>
+    </footer>
+
+
+    <!-- bootstrap jquery and js  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="/public/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("vFrameOptions");
+            if (x.style.visibility === "hidden") {
+                x.style.visibility = "visible";
+            } else {
+                x.style.visibility = "hidden";
+            }
+        } 
+    </script>
+</body>
+
+</html>

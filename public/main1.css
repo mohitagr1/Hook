@@ -1,0 +1,92 @@
+/* ================== */
+/* My CSS */
+/* ================== */
+
+html{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    margin-top: 150px;
+}
+
+.or{
+    height: 43px;
+    width: 250px;
+}
+
+body{
+    background-image: url("img/myimage-16-01.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.heading{
+    color: rgb(50, 50, 122);
+    font-size: 2.3rem;
+}
+
+.create-room{
+    font-size: 1.15rem;
+}
+/* medium and smaller  */
+@media (max-width: 991.98px) {
+    body{
+        background-image: none;
+    }
+    .image{
+        display: none;
+    }
+    .heading{
+        font-size: 1.8rem;
+    }
+    .lead{
+        font-size: 1.1rem;   
+    }
+    .create-room{
+        font-size: 1.0rem;
+    }
+    .join{
+        font-size: 0.9rem;
+    }
+    .or{
+        height: 35px;
+        width: 200px;
+    }
+}
+/* large and smaller  */
+@media (max-width: 1199.98px) {
+    .heading{
+        font-size: 1.9rem;
+    }
+    .lead{
+        font-size: 1.2rem;   
+    }
+    .create-room{
+        font-size: 0.9rem;
+    }
+    .join{
+        font-size: 0.9rem;
+    }
+    .or{
+        height: 38px;
+        width: 200px;
+    }
+
+ }
+/* navbar  */
+ .navbar-light .navbar-nav .nav-link{
+     font-size: 1.15rem;
+     color: rgb(50, 50, 122);
+ }
+ .navbar-light .navbar-brand{
+    font-size: 1.7rem;
+     color: rgb(50, 50, 122);
+     font-weight: 500;
+ }
+ .navbar-light .navbar-brand:hover{
+     color: rgb(50, 50, 122);
+ }
+
+
