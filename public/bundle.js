@@ -8194,8 +8194,6 @@ const { v4: uuidv4 } = require('uuid');
 let socket = io()
 let roomID = "foobar";
 let peersRef = [];
-let myPeer;
-var modal_instance;
 
 function initialization() {
     
@@ -8214,7 +8212,7 @@ function initialization() {
     // // var images = M.Materialbox.init(image_elems, images_options);
     // var instances = M.ScrollSpy.init(scrollspy_elems, scrollspy_options);
     // // createRoom_btn.addEventListener('click', function () {
-    // //     console.log("create btn pressed");
+    // //     //console.log("create btn pressed");
     // // })
 }
 
@@ -8224,17 +8222,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 const localVideo = document.getElementById("local-video");
-const createRoom = document.querySelector('#createRoomButton');
-const joinRoom = document.querySelector('#joinRoomButton');
+// const createRoom = document.querySelector('#createRoomButton');
+// const joinRoom = document.querySelector('#joinRoomButton');
 const endCallButton = document.querySelector('#endCallButton');
 const crb = document.getElementById("crbtext");
 
 endCallButton.addEventListener('click', endCall)
 
+getStream(roomID);
+
 function endCall() {
-    console.log("asking for ending the  call");
+    //console.log("asking for ending the  call");
     peersRef.forEach(p => {
-        console.log(p.peerID);
+        //console.log(p.peerID);
         socket.emit("endCall", { for: p.peerID, from: socket.id });
         p.peer.destroy();
     })
@@ -8242,26 +8242,27 @@ function endCall() {
     if (remoteVideoDiv) {
         remoteVideoDiv.remove();   
     }
+    endCallButton.setAttribute("href","/");
 }
 
 
-createRoom.addEventListener('click', () => {
-    roomID = uuidv4();
-    console.log(crb);
-    crb.innerHTML = "";
-    var s = "Your Room ID is : " + roomID;
-    crb.innerHTML = s;
-    getStream(roomID);
-});
+// createRoom.addEventListener('click', () => {
+//     roomID = uuidv4();
+//     //console.log(crb);
+//     crb.innerHTML = "";
+//     var s = "Your Room ID is : " + roomID;
+//     crb.innerHTML = s;
+//     getStream(roomID);
+// });
 
-joinRoom.addEventListener('click', () => {
-    roomID = document.querySelector('#roomID').value;
-    document.querySelector('#roomID').value = "";
-    crb.innerHTML = "";
-    var s = "Your Joined Room ID is : " + roomID;
-    crb.innerHTML = s;
-    getStream(roomID);
-})
+// joinRoom.addEventListener('click', () => {
+//     roomID = document.querySelector('#roomID').value;
+//     document.querySelector('#roomID').value = "";
+//     crb.innerHTML = "";
+//     var s = "Your Joined Room ID is : " + roomID;
+//     crb.innerHTML = s;
+//     getStream(roomID);
+// })
 
 
 
@@ -8286,10 +8287,10 @@ function getStream(roomID) {
 
 
 
-            console.log("checking roomID -> ", roomID);
+            //console.log("checking roomID -> ", roomID);
             socket.emit("join room", roomID);
             socket.on("all users", users => {
-                console.log("create peer for -> ", users);
+                //console.log("create peer for -> ", users);
                 const peersForThisUser = [];
                 if (users) {
                     users.forEach(userID => {
@@ -8301,26 +8302,27 @@ function getStream(roomID) {
                         peersForThisUser.push(peer);
                     })
                 }
-                console.log(socket.id, "-> peersRef:-> ", peersRef);
-                console.log("peersForThisUser:-> ", peersForThisUser);
+                //console.log(socket.id, "-> peersRef:-> ", peersRef);
+                //console.log("peersForThisUser:-> ", peersForThisUser);
                 // setPeers(peers);
             });
 
             socket.on("user joined", payload => {
+                console.log("user joined is calling addPeer");
                 const peer = addPeer(payload.signal, payload.callerID, stream);
                 peersRef.push({
                     peerID: payload.callerID,
                     peer,
                 })
-                console.log("user joined ->", payload);
+                //console.log("user joined ->", payload);
                 // setPeer(user => [...users, peer]);
             });
 
             socket.on("receiving returned signal", payload => {
-                console.log("rrs---> ", peersRef);
+                //console.log("rrs---> ", peersRef);
                 const item = peersRef.find(p => p.peerID === payload.id);
                 item.peer.signal(payload.signal);
-                console.log("receiving returned signal ->", payload);
+                //console.log("receiving returned signal ->", payload);
             });
 
             socket.on("room full", () => {
@@ -8328,7 +8330,7 @@ function getStream(roomID) {
             });
 
             socket.on("remove div", user => {
-                console.log("remove div vala", user);
+                //console.log("remove div vala", user);
                 deleteUser(user)
             })
 
@@ -8337,26 +8339,27 @@ function getStream(roomID) {
 }
 
 function deleteUser(userID) {
-    console.log("I reached here");
-    console.log("para are -> ", userID);
+    //console.log("I reached here");
+    //console.log("para are -> ", userID);
     const elements = document.getElementsByClassName(userID);
     while (elements.length > 0) elements[0].remove();
 }
 
 
 function CreateVideo(stream, callerID) {
+    console.log("create video with:-> for->",callerID,socket.id);
     let localVideoDiv = document.createElement('div')
     localVideoDiv.id = 'vframeR'
     var c = callerID;
-    var s = 'card vFrameRemote grey darken-3 ' + c;
-    console.log(s);
+    var s = 'card grey darken-3 video-container ' + c;
+    //console.log(s);
     localVideoDiv.setAttribute('class', s);
     document.querySelector('#videos').appendChild(localVideoDiv)
     let video = document.createElement('video')
     video.id = 'remote-video'
-    video.setAttribute('class', 'center')
-    video.setAttribute('width', "100%");
-    video.setAttribute('height', "100%");
+    // video.setAttribute('class', 'center')
+    // video.setAttribute('width', "100%");
+    // video.setAttribute('height', "100%");
     localVideoDiv.appendChild(video)
     video.srcObject = stream
     video.play()
@@ -8364,11 +8367,12 @@ function CreateVideo(stream, callerID) {
     // if (remoteVideo) {
     //     remoteVideo.srcObject = stream;
     // }
-    console.log("createVideo");
+    //console.log("createVideo");
 }
 
 function createPeer(userToSignal, callerID, stream) {
-    console.log("para of createPeer are -> ", userToSignal, callerID);
+    console.log("createPeer is calling signal");
+    //console.log("para of createPeer are -> ", userToSignal, callerID);
     const peer = new Peer({
         initiator: true,
         trickle: false,
@@ -8378,19 +8382,20 @@ function createPeer(userToSignal, callerID, stream) {
         CreateVideo(stream, userToSignal);
     });
     peer.on("signal", signal => {
+        console.log("signal is calling sending signal");
         socket.emit("sending signal", { userToSignal, callerID, signal })
     })
-    console.log("createPeer");
+    //console.log("createPeer");
     return peer;
 }
 
 
 function addPeer(incomingSignal, callerID, stream) {
-    console.log("para of addPeer are -> ", incomingSignal, callerID)
+    //console.log("para of addPeer are -> ", incomingSignal, callerID)
     const peer = new Peer({
         initiator: false,
         trickle: false,
-        stream,
+        stream, 
     });
     peer.on("stream", stream => {
         CreateVideo(stream, callerID);
@@ -8400,7 +8405,7 @@ function addPeer(incomingSignal, callerID, stream) {
     })
     peer.signal(incomingSignal);
 
-    console.log("addPeer");
+    //console.log("addPeer");
     return peer;
 }
 

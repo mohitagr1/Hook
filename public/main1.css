@@ -1,0 +1,138 @@
+/* ================== */
+/* My CSS */
+/* ================== */
+
+html{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    margin-top: 150px;
+}
+
+.or{
+    height: 43px;
+    width: 250px;
+}
+
+body{
+    background-image: url("img/myimage-16-01.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.heading{
+    color: rgb(50, 50, 122);
+    font-size: 2.3rem;
+}
+
+.create-room{
+    font-size: 1.15rem;
+}
+/* medium and smaller  */
+@media (max-width: 991.98px) {
+    .header{
+        margin-top: 50px;
+    }
+    body{
+        background-image: none;
+        background-color: #f0f0f0;
+    }
+    .image{
+        display: none;
+    }
+    .heading{
+        font-size: 1.8rem;
+    }
+    .lead{
+        font-size: 1.1rem;   
+    }
+    .create-room{
+        font-size: 1.0rem;
+    }
+    .join{
+        font-size: 0.9rem;
+    }
+    .or{
+        height: 35px;
+        width: 200px;
+    }
+    .navcss{
+        background-color: #343a40;
+    }
+    .navbar-light .navbar-brand {
+        color: white;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color:#f5f6fa;
+    }
+
+    .navbar-light .navbar-brand:hover{
+        color: white;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+        color: white;
+    }
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 246, 250, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+      
+      .custom-toggler.navbar-toggler {
+        border-color: rgba(245, 246, 250, 0.5);
+      } 
+      .createValaRow{
+          flex-direction: column;
+          align-items: center;
+      }
+      .orr{
+          align-self: center;
+      }
+      .joini{
+          margin-right: 8px;
+      }
+}
+/* large and smaller  */
+@media (max-width: 1199.98px) {
+    .heading{
+        font-size: 1.9rem;
+    }
+    .lead{
+        font-size: 1.2rem;   
+    }
+    .create-room{
+        font-size: 0.9rem;
+    }
+    .join{
+        font-size: 0.9rem;
+    }
+    .or{
+        height: 38px;
+        width: 200px;
+    }
+
+ }
+ /* ----------for screen size 15.6 inch---------- */
+@media (min-width: 1400px){
+    .container{
+        max-width: 1370px;
+      }
+      .header{
+          margin-top: 200px;
+      }
+    }
+/* navbar  */
+ /* .navbar-light .navbar-nav .nav-link{
+     font-size: 1.15rem;
+     color: rgb(50, 50, 122);
+ }
+ .navbar-light .navbar-brand{
+    font-size: 1.7rem;
+     color: rgb(50, 50, 122);
+     font-weight: 500;
+ }
+ .navbar-light .navbar-brand:hover{
+     color: rgb(50, 50, 122);
+ } */
+
+

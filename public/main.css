@@ -1,13 +1,13 @@
-header {
-    background: url(img/BG1.webp);
-    background-size: cover;
+/* header {
+
+    background-color: black;
     background-position: center;
     min-height: 800px;
-}
+} */
 
 #local-video{
     transform: rotateY(180deg);
-    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -webkit-transform:rotateY(180deg); /*Safari and Chrome*/
     -moz-transform:rotateY(180deg); /* Firefox */
 }
 
@@ -29,15 +29,20 @@ header {
     border-radius: 30px;
 }
 
-#vframeR {
+/* #vframeR {
     position: relative;
     width: 100%;
     height: 315px;
-}
+} */
 
-#local-video-div{
+/* #local-video-div{
     width: 100%;
-    height: 315px;
+    height: 100%;
+} */
+
+video{
+    width: 100%;
+    height: 100%;
 }
 
 #vFrameOptions {
@@ -58,9 +63,14 @@ header {
     position: absolute;
 } */
 
-.card {
-    margin-bottom: 0px;
-}
+/* .card {
+    margin: 0px;
+} */
+
+/* .vFrame1{
+    width:60%; 
+    height:800px; 
+} */
 
 /* #remote-video{
     width: 100%;
@@ -82,12 +92,12 @@ header {
 .videoFrames {
     /* background-color: #172328; */
     /* max-height: 1000px;*/
-    min-height: 600px;
+    /* min-height: 600px; */
     /* position: relative; */
     display: grid;
-    /* grid-template-rows: repeat(2,1fr); */
+    grid-template-rows: repeat(2,1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 0 5px;
+    gap: 5px 5px;
     /* justify-items: center; */
     /* grid-template-areas:
         "vFrame1 vFrame2"
@@ -135,3 +145,34 @@ background-color: #172328;
 .tabs .tab a:focus.active {
     background: transparent;
 }
+
+#end-call{
+    background: transparent;
+}
+
+.video-container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+  }
+  .video-container video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%; 
+    min-height: 100%; 
+  
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    /* width: 100%;
+    height: 100%; */
+
+    object-fit: cover;
+    /* object-position: center; */
+  
+    /* Center the video */
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+  }

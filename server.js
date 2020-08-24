@@ -2,15 +2,19 @@ const express = require('express')
 const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
+const path = require('path');
 const port = process.env.PORT || 3000
 
 app.use(express.static(__dirname + "/public"))
 let users = {};
 let socketToRoom = {};
 let clients = 0
+let urlRoomID = "xyz";
+
 
 io.on('connection', function (socket) {
     socket.on("join room", roomID => {
+        roomID = urlRoomID;
         //console.log(socket.id + "guy just joined the room :-> " + roomID);
         // const usersInThisRoom = users[roomID];
         if (users[roomID]) {
@@ -32,12 +36,13 @@ io.on('connection', function (socket) {
         socket.emit("all users", usersInThisRoom);
     });
     socket.on("sending signal", payload => {
-        //console.log("sending signal -> ", payload.userToSignal,payload.callerID,payload.signal.type);
+        console.log("sending signal is calling user joined");
+        console.log("sending signal -> ", payload.userToSignal,payload.callerID,payload.signal.type);
         io.to(payload.userToSignal).emit('user joined', { signal: payload.signal, callerID: payload.callerID });
     });
 
     socket.on("returning signal", payload => {
-        //console.log("returning signal -> ", payload.signal.type,payload.callerID);
+        console.log("returning signal -> ", payload.signal.type,payload.callerID);
         io.to(payload.callerID).emit('receiving returned signal', { signal: payload.signal, id: socket.id });
     });
 
@@ -56,6 +61,14 @@ io.on('connection', function (socket) {
         }
         //console.log("users left -> ", users);
     });
+})
+
+
+app.get("/video/:id", (req, res) =>{
+    urlRoomID = req.params.id;
+    // console.log(urlRoomID);
+    // res.render("../public/video");
+    res.sendFile(path.join(__dirname+"/public/video.html"));
 })
 
 http.listen(port, () => console.log(`Active on ${port} port`))
